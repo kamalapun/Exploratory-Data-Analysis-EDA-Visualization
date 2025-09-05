@@ -1,5 +1,5 @@
-#File: src/load_data.py
-###Imports
+# File: src/load_data.py
+### Imports
 ```
 import os
 import pandas as pd
@@ -7,7 +7,7 @@ import pandas as pd
 - os: Provides functions for working with the operating system, like file paths. 
 - pandas as pd: Pandas is used for working with data in tables (DataFrames).
 
-###Function: load_dataset(file_name)
+### Function: load_dataset(file_name)
 
 This function loads a dataset (CSV file) from the data folder.
 
@@ -33,7 +33,7 @@ return pd.read_csv(path)
 Uses pandas to read the CSV file at path.
 Returns a DataFrame — a table-like structure for working with data.
 
-#File: src/clean_data.py
+# File: src/clean_data.py
 
 It imports pandas (a library for working with tabular data) and defines a function clean_dataset that cleans a given dataset stored as a pandas DataFrame.
 Function: 
@@ -71,8 +71,8 @@ For the duration column, missing values are also replaced with 'Unknown'.
 return df
 ```
 Finally, the cleaned DataFrame is returned.
-#File src/visualize_data
-###Imports
+# File src/visualize_data
+### Imports
 ```
 import matplotlib
 matplotlib.use('TkAgg')  # or 'Qt5Agg' if Tk is unavailable
@@ -89,7 +89,7 @@ import os
 
 sns.set(style="whitegrid"): Sets the default Seaborn style for plots with a white background and grid lines.
 
--Function: save_plot
+### Function: save_plot
 ```
 def save_plot(fig, filename):
     os.makedirs("images", exist_ok=True)
@@ -103,7 +103,7 @@ Purpose: Save a plot as an image file.
 - bbox_inches='tight' trims extra whitespace.
 - plt.close(fig) closes the figure to free memory.
 
-###Function: plot_content_type
+### Function: plot_content_type
 ```
 def plot_content_type(df):
     print("Plots debug to /images folder.")
@@ -118,7 +118,7 @@ Creates a count plot showing how many movies vs TV shows exist.
 Uses viridis color palette.
 Calls save_plot to save the figure as "images/content_type_count.png".
 
-###Function: plot_top_countries
+### Function: plot_top_countries
 ```
 def plot_top_countries(df):
     fig, ax = plt.subplots(figsize=(8, 5))
@@ -132,7 +132,7 @@ Finds the top 10 countries by content count.
 Plots a horizontal bar chart using barplot.
 Saves figure as "images/top_countries.png".
 
-###Function: plot_release_year_distribution
+### Function: plot_release_year_distribution
 ```
 def plot_release_year_distribution(df):
     fig, ax = plt.subplots(figsize=(10, 5))
